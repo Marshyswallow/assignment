@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="p" placeholder="Principal" />
+    <input id="r" placeholder="Rate" />
+    <input id="t" placeholder="Time" />
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+      function calculate() {
+        const p = document.getElementById("p").value;
+        const r = document.getElementById("r").value;
+        const t = document.getElementById("t").value;
+
+        fetch(`https://assignment-6szq.onrender.com/ci?p=${p}&r=${r}&t=${t}`)
+          .then((res) => res.text())
+          .then((ans) => {
+            document.getElementById("result").innerHTML = ans;
+          });
+      }
+    </script>
+  </body>
+</html>

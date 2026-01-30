@@ -1,5 +1,8 @@
 const express=require('express')
 const app=express()
+const cors = require('cors');
+app.use(cors());
+
 
 app.get('/ci',function(req,res){
   const p=parseFloat(req.query.p)
