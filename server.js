@@ -17,6 +17,8 @@ app.get('/ci',function(req,res){
   res.send(ci.toFixed(2))
 })
 
-app.listen(3000,function(){
-  console.log("server is running")
-})
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("server running on", PORT);
+});
